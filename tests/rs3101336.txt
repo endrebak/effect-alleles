@@ -1,0 +1,11 @@
+Direction	Publication	RiskAllele	RsID	Title	Trait
+decrease	Nat Commun	T	rs3101336	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	BMI (adjusted for smoking behaviour)
+increase	Nature	C	rs3101336	Genetic studies of body mass index yield new insights for obesity biology.	Body mass index
+decrease	Nat Commun	T	rs3101336	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	BMI in non-smokers
+increase	Nature	T	rs3101336	Parent-of-origin-specific allelic associations among 106 genomic loci for age at menarche.	Menarche (age at onset)
+	Nat Genet	C	rs3101336	Genome-wide meta-analysis identifies 11 new loci for anthropometric traits and provides insights into genetic architecture.	Obesity
+decrease	Nat Commun	T	rs3101336	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	BMI in smokers
+	Nat Commun	T	rs3101336	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	Body mass index (joint analysis main effects and smoking interaction)
+increase	Nat Genet	C	rs3101336	Genome-wide association study identifies 112 new loci for body mass index in the Japanese population.	Body mass index
+	Nat Genet	C	rs3101336	Genome-wide SNP and CNV analysis identifies common and low-frequency variants associated with severe early-onset obesity.	Obesity (early onset extreme)
+	Hum Mol Genet	C	rs3101336	Genome-wide association analysis identifies three new susceptibility loci for childhood body mass index.	Childhood body mass index

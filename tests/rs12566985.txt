@@ -1,0 +1,6 @@
+Direction	Publication	RiskAllele	RsID	Title	Trait
+increase	Nature	G	rs12566985	Genetic studies of body mass index yield new insights for obesity biology.	Body mass index
+decrease	Nat Commun	A	rs12566985	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	BMI (adjusted for smoking behaviour)
+decrease	Nat Genet	A	rs12566985	Genome-wide association study identifies 112 new loci for body mass index in the Japanese population.	Body mass index
+	Nat Commun	A	rs12566985	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	Body mass index (joint analysis main effects and smoking interaction)
+	Hum Mol Genet	G	rs12566985	Genome-wide association analysis identifies three new susceptibility loci for childhood body mass index.	Childhood body mass index

@@ -1,0 +1,6 @@
+Direction	Publication	RiskAllele	RsID	Title	Trait
+	Nat Commun	A	rs2820292	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	Body mass index (joint analysis main effects and smoking interaction)
+decrease	Nature	A	rs2820292	New genetic loci link adipose and insulin biology to body fat distribution.	Waist circumference
+increase	Nature	C	rs2820292	Genetic studies of body mass index yield new insights for obesity biology.	Body mass index
+decrease	Nat Commun	A	rs2820292	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	BMI (adjusted for smoking behaviour)
+decrease	Nat Commun	A	rs2820292	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	BMI in non-smokers

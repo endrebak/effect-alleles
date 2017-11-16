@@ -1,0 +1,10 @@
+Direction	Publication	RiskAllele	RsID	Title	Trait
+decrease	Nat Commun	T	rs17024393	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	BMI (adjusted for smoking behaviour)
+increase	Nature	C	rs17024393	Genetic studies of body mass index yield new insights for obesity biology.	Body mass index
+	PLoS Genet	?	rs17024393	Genome-wide physical activity interactions in adiposity - A meta-analysis of 200,452 adults.	Body mass index (joint analysis main effects and physical activity interaction)
+increase	PLoS Genet	C	rs17024393	Genome-wide physical activity interactions in adiposity - A meta-analysis of 200,452 adults.	Body mass index in physically active individuals
+	Hum Mol Genet	C	rs17024393	Genome-wide association analysis identifies three new susceptibility loci for childhood body mass index.	Childhood body mass index
+decrease	Nature	T	rs17024393	New genetic loci link adipose and insulin biology to body fat distribution.	Hip circumference
+increase	PLoS Genet	C	rs17024393	Genome-wide physical activity interactions in adiposity - A meta-analysis of 200,452 adults.	Body mass index
+decrease	Nat Commun	T	rs17024393	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	BMI in non-smokers
+	Nat Commun	T	rs17024393	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	Body mass index (joint analysis main effects and smoking interaction)

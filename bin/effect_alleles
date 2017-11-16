@@ -1,0 +1,93 @@
+#!/usr/bin/env python
+
+rs_ids = """rs977747
+rs657452
+rs11583200
+rs3101336
+rs12566985
+rs12401738
+rs11165643
+rs17024393
+rs543874
+rs2820292
+rs13021737
+rs10182181
+rs11126666""".split()
+
+import sys
+import requests, argparse
+import json
+
+
+import pandas as pd
+
+import click
+
+
+def retrieve_data(rs_ids):
+
+    base_url = "http://www.ebi.ac.uk/gwas/beta/rest/api/"
+    snps = "singleNucleotidePolymorphisms/"
+    search = "search/findByRsId?rsId="
+
+    snp_rows = []
+
+    with click.progressbar(rs_ids, file=sys.stderr) as bar:
+
+        for rs_id in bar:
+            url = base_url+snps+search+rs_id
+
+            snp_response = requests.get(url)
+
+            snp_data = json.loads(snp_response.content)
+
+            association_data = json.loads(requests.get(snp_data["_links"]["associations"]["href"]).content)
+
+            associations = association_data["_embedded"]["associations"]
+
+            for j, association in enumerate(associations):
+
+                study = json.loads(requests.get(association["_links"]["study"]["href"]).content)
+
+                title =  study["title"]
+                publication = study["publication"]
+
+                trait = study["diseaseTrait"]["trait"]
+
+                direction = association["betaDirection"]
+
+                for i, loci in enumerate(association["loci"]):
+
+                    assert len(loci["strongestRiskAlleles"]) == 1, print(loci["strongestRiskAlleles"])
+
+                    risk_allele = loci["strongestRiskAlleles"][0]["riskAlleleName"].split("-")[1]
+
+                    [title, trait, risk_allele, direction]
+                    rowdict = {"Title": title, "Trait": trait, "RiskAllele": risk_allele, "Direction": direction, "Publication": publication, "RsID": rs_id}
+                    snp_rows.append(rowdict)
+
+        return snp_rows
+
+import pkg_resources
+
+from effect_alleles.gwas_catalogue import find_trait, find_direction
+
+if __name__ == "__main__":
+
+    aliases_file = pkg_resources.resource_filename("effect_alleles", "data/aliases.txt")
+    aliases = pd.read_table(aliases_file)
+    print(aliases)
+
+    # row_order = "RsID Trait RiskAllele Direction Title Publication".split()
+
+    # snp_data = retrieve_data(rs_ids)
+
+    # df = pd.DataFrame.from_dict(snp_data).drop_duplicates()
+
+    # print(df.to_csv(sep="\t", index=False))
+
+    df = pd.read_table("tests/test_data.tsv", sep="\t")
+
+    for rsid, rsid_df in df.groupby("RsID"):
+
+        find_trait(rsid_df)

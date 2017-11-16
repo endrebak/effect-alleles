@@ -1,0 +1,4 @@
+Direction	Publication	RiskAllele	RsID	Title	Trait
+	Nat Commun	T	rs11583200	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	Body mass index (joint analysis main effects and smoking interaction)
+decrease	Nat Commun	T	rs11583200	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	BMI (adjusted for smoking behaviour)
+increase	Nature	C	rs11583200	Genetic studies of body mass index yield new insights for obesity biology.	Body mass index

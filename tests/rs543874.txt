@@ -1,0 +1,20 @@
+Direction	Publication	RiskAllele	RsID	Title	Trait
+increase	PLoS Genet	G	rs543874	Discovery and fine-mapping of adiposity loci using high density imputation of genome-wide association studies in individuals of African ancestry: African Ancestry Anthropometry Genetics Consortium.	Body mass index (adult)
+decrease	Nat Commun	A	rs543874	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	BMI (adjusted for smoking behaviour)
+	PLoS Genet	?	rs543874	Genome-wide physical activity interactions in adiposity - A meta-analysis of 200,452 adults.	Body mass index (joint analysis main effects and physical activity interaction)
+increase	PLoS Genet	G	rs543874	Genome-wide physical activity interactions in adiposity - A meta-analysis of 200,452 adults.	Body mass index
+increase	Nat Commun	G	rs543874	New loci for body fat percentage reveal link between adiposity and cardiometabolic disease risk.	Body fat percentage
+increase	PLoS Genet	G	rs543874	Genome-wide physical activity interactions in adiposity - A meta-analysis of 200,452 adults.	Body mass index in physically active individuals
+increase	Nat Genet	G	rs543874	A meta-analysis identifies new loci associated with body mass index in individuals of African ancestry.	Body mass index
+increase	Nat Genet	G	rs543874	Genome-wide association study identifies 112 new loci for body mass index in the Japanese population.	Body mass index
+decrease	Nature	A	rs543874	New genetic loci link adipose and insulin biology to body fat distribution.	Hip circumference
+increase	Nature	A	rs543874	Parent-of-origin-specific allelic associations among 106 genomic loci for age at menarche.	Menarche (age at onset)
+	Nat Commun	A	rs543874	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	Body mass index (joint analysis main effects and smoking interaction)
+decrease	Nat Commun	A	rs543874	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	BMI in non-smokers
+increase	PLoS Genet	G	rs543874	Genome-wide physical activity interactions in adiposity - A meta-analysis of 200,452 adults.	Body mass index in physically inactive individuals
+increase	Nature	G	rs543874	Genetic studies of body mass index yield new insights for obesity biology.	Body mass index
+decrease	Nat Commun	A	rs543874	Genome-wide meta-analysis of 241,258 adults accounting for smoking behaviour identifies novel loci for obesity traits.	BMI in smokers
+increase	Hum Mol Genet	G	rs543874	Genome-wide analysis of BMI in adolescents and young adults reveals additional insight into the effects of genetic loci over the life course.	Body mass index
+increase	Nat Genet	G	rs543874	Association analyses of 249,796 individuals reveal 18 new loci associated with body mass index.	Body mass index
+	Hum Mol Genet	G	rs543874	Genome-wide association analysis identifies three new susceptibility loci for childhood body mass index.	Childhood body mass index
+increase	Hum Mol Genet	G	rs543874	Genome-wide association analysis identifies three new susceptibility loci for childhood body mass index.	Childhood body mass index

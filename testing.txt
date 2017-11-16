@@ -1,0 +1,1 @@
+http://www.ebi.ac.uk/gwas/beta/rest/api/singleNucleotidePolymorphisms/search/findByRsId?rsId=rs977747
