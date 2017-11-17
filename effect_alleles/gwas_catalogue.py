@@ -76,6 +76,10 @@ def rsid_search(rs_ids):
 
                 ancestries = study["ancestries"]
 
+                ancestral_groups = ", ".join([a["ancestralGroups"][0]["ancestralGroup"] + "(" + str(a["numberOfIndividuals"]) + ")" for a in ancestries])
+                print(ancestral_groups)
+                # print(pd.DataFrame.from_dict(ancestries))
+
                 nb_individuals_initial, nb_individuals_replication = 0, 0
                 for ancestry in ancestries:
                     if ancestry["type"] == "initial":
@@ -109,7 +113,7 @@ def rsid_search(rs_ids):
                                nb_individuals_initial, "NReplication":
                                nb_individuals_replication, "NTotal":
                                nb_individuals_replication + \
-                               nb_individuals_initial}
+                               nb_individuals_initial, "AncestralGroups": ancestral_groups}
 
                     snp_rows.append(rowdict)
 

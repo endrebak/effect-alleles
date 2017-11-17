@@ -15,7 +15,7 @@ rs10182181
 rs11126666""".split()
 
 
-# rs_ids = """rs977747""".split()
+rs_ids = """rs977747""".split()
 
 # rs657452""".split()
 
@@ -51,11 +51,6 @@ from effect_alleles.gwas_catalogue import find_trait, rsid_search
 
 # 25673413
 
-def filter_trait(trait):
-
-    regex = "|".join(list(aliases.ix[trait].Alias))
-
-
 if __name__ == "__main__":
 
     aliases_file = pkg_resources.resource_filename("effect_alleles", "data/aliases_strict.txt")
@@ -63,15 +58,15 @@ if __name__ == "__main__":
 
     # print(filter_trait("bmi"))
 
-    # row_order = "RsID Trait RiskAllele RiskFrequency BetaNumber BetaUnit Direction PubmedID PValue StdError NInitial NReplication NTotal".split() # Title Publication
+    row_order = "RsID Trait RiskAllele RiskFrequency BetaNumber BetaUnit Direction PubmedID PValue StdError NInitial NReplication NTotal AncestralGroups".split() # Title Publication
 
-    # snp_data = rsid_search(rs_ids)
+    snp_data = rsid_search(rs_ids)
 
-    # df = pd.DataFrame.from_dict(snp_data).drop_duplicates()[row_order]
+    df = pd.DataFrame.from_dict(snp_data).drop_duplicates()[row_order]
 
-    # print(df.to_csv(sep="\t", index=False))
+    print(df.to_csv(sep="\t", index=False))
 
-    df = pd.read_table("output.txt", sep="\t")
+    # df = pd.read_table("output.txt", sep="\t")
 
     trait = "bmi"
 
