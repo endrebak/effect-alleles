@@ -1,0 +1,5 @@
+Trait	Alias
+bmi	body mass index
+bmi	bmi
+bmi	circumference
+bmi	obesity

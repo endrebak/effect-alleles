@@ -14,80 +14,72 @@ rs13021737
 rs10182181
 rs11126666""".split()
 
-import sys
-import requests, argparse
-import json
+
+# rs_ids = """rs977747""".split()
+
+# rs657452""".split()
+
+# rs_ids = ["rs11165643"]
+
 
 
 import pandas as pd
+import sys
 
-import click
 
 
-def retrieve_data(rs_ids):
+# def trait_search():
 
-    base_url = "http://www.ebi.ac.uk/gwas/beta/rest/api/"
-    snps = "singleNucleotidePolymorphisms/"
-    search = "search/findByRsId?rsId="
+#     base_url = properties.base_url
+#     efoTraits = properties.efoTraits
+#     search = properties.uriSearch
 
-    snp_rows = []
+#     studies = "studies/"
+#     pmidSearch = "search/findByPubmedId?pubmedId="
+#     studyAssociations = "associations?projection=associationsByStudySummary"
 
-    with click.progressbar(rs_ids, file=sys.stderr) as bar:
+#     efoTraits = "efoTraits/"
+#     uriSearch = "search/findByEfoUri?uri="
+#     efoAssociations = "associations?projection=associationsByEfoTraitSummary"
 
-        for rs_id in bar:
-            url = base_url+snps+search+rs_id
 
-            snp_response = requests.get(url)
 
-            snp_data = json.loads(snp_response.content)
-
-            association_data = json.loads(requests.get(snp_data["_links"]["associations"]["href"]).content)
-
-            associations = association_data["_embedded"]["associations"]
-
-            for j, association in enumerate(associations):
-
-                study = json.loads(requests.get(association["_links"]["study"]["href"]).content)
-
-                title =  study["title"]
-                publication = study["publication"]
-
-                trait = study["diseaseTrait"]["trait"]
-
-                direction = association["betaDirection"]
-
-                for i, loci in enumerate(association["loci"]):
-
-                    assert len(loci["strongestRiskAlleles"]) == 1, print(loci["strongestRiskAlleles"])
-
-                    risk_allele = loci["strongestRiskAlleles"][0]["riskAlleleName"].split("-")[1]
-
-                    [title, trait, risk_allele, direction]
-                    rowdict = {"Title": title, "Trait": trait, "RiskAllele": risk_allele, "Direction": direction, "Publication": publication, "RsID": rs_id}
-                    snp_rows.append(rowdict)
-
-        return snp_rows
 
 import pkg_resources
 
-from effect_alleles.gwas_catalogue import find_trait, find_direction
+from effect_alleles.gwas_catalogue import find_trait, rsid_search
+
+# 25673413
+
+def filter_trait(trait):
+
+    regex = "|".join(list(aliases.ix[trait].Alias))
+
 
 if __name__ == "__main__":
 
-    aliases_file = pkg_resources.resource_filename("effect_alleles", "data/aliases.txt")
-    aliases = pd.read_table(aliases_file)
-    print(aliases)
+    aliases_file = pkg_resources.resource_filename("effect_alleles", "data/aliases_strict.txt")
+    aliases = pd.read_table(aliases_file, index_col=0)
 
-    # row_order = "RsID Trait RiskAllele Direction Title Publication".split()
+    # print(filter_trait("bmi"))
 
-    # snp_data = retrieve_data(rs_ids)
+    # row_order = "RsID Trait RiskAllele RiskFrequency BetaNumber BetaUnit Direction PubmedID PValue StdError NInitial NReplication NTotal".split() # Title Publication
 
-    # df = pd.DataFrame.from_dict(snp_data).drop_duplicates()
+    # snp_data = rsid_search(rs_ids)
+
+    # df = pd.DataFrame.from_dict(snp_data).drop_duplicates()[row_order]
 
     # print(df.to_csv(sep="\t", index=False))
 
-    df = pd.read_table("tests/test_data.tsv", sep="\t")
+    df = pd.read_table("output.txt", sep="\t")
 
+    trait = "bmi"
+
+    trait_aliases = list(aliases.ix[trait].Alias)
+    trait_dfs = []
     for rsid, rsid_df in df.groupby("RsID"):
 
-        find_trait(rsid_df)
+        trait_df = find_trait(rsid_df, trait_aliases)
+        trait_dfs.append(trait_df)
+
+    pd.concat(trait_dfs).to_csv(sys.stdout, sep="\t", index=False)

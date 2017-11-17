@@ -6,6 +6,7 @@ import pandas as pd
 
 from effect_alleles.gwas_catalogue import find_trait, find_direction
 
+
 @pytest.fixture
 def whole_df():
 
